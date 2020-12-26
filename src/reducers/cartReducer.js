@@ -80,7 +80,8 @@ export const cartReducer = (state = initialState, action) => {
                 const { price, amount } = cartItem;
                 const itemTotal = price * amount;
 
-                cartTotal.total += itemTotal
+                cartTotal.total += itemTotal;
+                cartTotal.amount += amount;
 
                 return cartTotal
             },
@@ -91,6 +92,8 @@ export const cartReducer = (state = initialState, action) => {
             );
             total = parseFloat(total.toFixed(2));
             return { ...state, total, amount }
+        case act.RESET_CART:
+            return { ...state, cart: [] }
         default:
             return state;
     }

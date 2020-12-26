@@ -29,8 +29,16 @@ const Cart = () => {
                             ))}
                         </div>
                         <div className="cart-total">
-                            <h4>Total Price: <strong>${total}</strong></h4>
-                            <h3>Number of Items: <strong>{amount}</strong></h3>
+                            <h3>Total Price: <strong>${total}</strong></h3>
+                            <h4>Number of Items: <strong>{amount}</strong></h4>
+                        </div>
+                        <div className="cart-manage">
+                            <button
+                                onClick={() => dispatch(allActions.resetCart())} className="cart-manage-btn reset"
+                            >
+                                Reset Cart
+                                </button>
+                            <button className="cart-manage-btn accept">Continue</button>
                         </div>
                     </div >
                     : <h2 style={{ textAlign: 'center', marginTop: '4em' }}>No items in the cart yet!</h2>
