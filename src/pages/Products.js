@@ -6,7 +6,6 @@ import ProductItem from '../components/ProductItem'
 const Products = () => {
 
     const products = useSelector(state => state.products)
-    console.log(products)
 
     return (
         <div className="products-cnt">

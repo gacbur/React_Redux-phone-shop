@@ -129,6 +129,8 @@
 .cart-cnt{
   padding:4em 0em;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width:100%;
 }
@@ -204,4 +206,31 @@
   margin:0em .2em;
   transform: scale(1.05);
   color:rgb(119, 119, 119);
+}
+
+.cart-items-number{
+  background-color: var(--secondary-color);
+  padding:0em .5em;
+  border-radius: 8px;
+  box-shadow: 0 0px 8px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  margin-left:.5em;
+}
+
+.cart-total{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding:2.5em 1em;
+  width:90%;
+  margin-top:2em;
+  max-width: 750px;
+}
+
+.cart-total h4{
+  flex-grow: 1;
 }

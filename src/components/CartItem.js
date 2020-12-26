@@ -25,7 +25,12 @@ const CartItem = ({ item }) => {
                     <FaTrash /></button>
                 <button onClick={() => dispatch(allActions.increaseAmount(item.id))} className="cart-item-btn-counter">+</button>
                 {item.amount}
-                <button onClick={() => dispatch(allActions.decreaseAmount(item.id, item.amount))} className="cart-item-btn-counter">-</button>
+                <button
+                    onClick={item.amount === 1 ?
+                        () => dispatch(allActions.removeFromCart(item.id))
+                        :
+                        () => dispatch(allActions.decreaseAmount(item.id, item.amount))
+                    } className="cart-item-btn-counter">-</button>
             </div>
         </div>
     )

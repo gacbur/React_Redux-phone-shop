@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+
+import { useSelector } from 'react-redux'
 
 import { FaShoppingCart } from 'react-icons/fa'
 
 const Nav = () => {
+
+    const cart = useSelector(state => state.cart)
+    const [ItemsInCartNb, setItemsInCartNb] = useState(0)
+
+    useEffect(() => {
+        const cartItemsCounter = cart.reduce((counter, { amount }) => amount > 0 ? counter + amount : counter, 0)
+        setItemsInCartNb(cartItemsCounter)
+    }, [cart])
+
     return (
         <div className="nav">
             <div className="nav-logo">
@@ -14,7 +25,7 @@ const Nav = () => {
                     <NavLink to='/'>Products</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/cart'>Cart <FaShoppingCart /></NavLink>
+                    <NavLink to='/cart'>Cart <span className="cart-items-number"><FaShoppingCart />{ItemsInCartNb === 0 ? null : ItemsInCartNb}</span></NavLink>
                 </li>
             </ul>
         </div>

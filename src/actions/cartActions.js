@@ -31,9 +31,25 @@ export const decreaseAmount = (id, amount) => {
     }
 }
 
+export const getTotals = () => {
+    return {
+        type: action.GET_TOTALS
+    }
+}
+
+export const toggleAmount = (id, toggle) => {
+    return {
+        type: action.TOGGLE_AMOUNT, payload: {
+            id,
+            toggle
+        }
+    }
+}
+
 export const allActions = {
     addToCart,
     removeFromCart,
     increaseAmount,
-    decreaseAmount
+    decreaseAmount,
+    getTotals
 }

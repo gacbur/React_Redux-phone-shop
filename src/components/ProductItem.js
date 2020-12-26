@@ -23,8 +23,6 @@ const ProductItem = ({ item }) => {
 
         let IsItemInCart = itemInCart()
 
-        console.log(IsItemInCart)
-
         setIsItemInCart(IsItemInCart)
 
     }, [cart, item.name])

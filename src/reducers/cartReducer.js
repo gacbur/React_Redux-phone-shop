@@ -31,7 +31,9 @@ const initialState = {
             amount: 1
         }
     ],
-    cart: []
+    cart: [],
+    total: 0,
+    amount: 0
 }
 
 export const cartReducer = (state = initialState, action) => {
@@ -72,7 +74,23 @@ export const cartReducer = (state = initialState, action) => {
                 return cartItem;
             });
             return { ...state, cart: tempCartIncrease };
+        case act.GET_TOTALS:
 
+            let { total, amount } = state.cart.reduce((cartTotal, cartItem) => {
+                const { price, amount } = cartItem;
+                const itemTotal = price * amount;
+
+                cartTotal.total += itemTotal
+
+                return cartTotal
+            },
+                {
+                    total: 0,
+                    amount: 0
+                }
+            );
+            total = parseFloat(total.toFixed(2));
+            return { ...state, total, amount }
         default:
             return state;
     }
