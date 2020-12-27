@@ -354,3 +354,17 @@
   background-color: lightgreen;
   margin-left: auto;
 }
+
+
+/* SINGLE PRODUCT */
+
+.single-room-cnt{
+  display: flex;
+  justify-content: center;
+  margin-top:6em;
+  width:100%;
+}
+
+.single-room{
+  width:65%;
+}

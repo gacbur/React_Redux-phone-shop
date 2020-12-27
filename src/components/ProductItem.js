@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { useDispatch, useSelector } from 'react-redux'
 
 import { allActions } from '../actions/cartActions'
@@ -30,9 +32,11 @@ const ProductItem = ({ item }) => {
 
     return (
         <div className="product-item">
-            <div className="product-item-image">
-                <img src={item.img} alt="" />
-            </div>
+            <Link to={`/product/${item.id}`} >
+                <div className="product-item-image">
+                    <img src={item.img} alt="" />
+                </div>
+            </Link>
             <div className="product-item-text">
                 <h4>Product: {item.name}</h4>
                 <h5>Price: ${item.price}</h5>
