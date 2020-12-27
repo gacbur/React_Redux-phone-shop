@@ -31,10 +31,32 @@ export const decreaseAmount = (id, amount) => {
     }
 }
 
+export const getSortedProducts = (products) => {
+    return {
+        type: action.GET_SORTED_PRODUCTS,
+        payload: products
+    }
+}
+
+export const changeSortedValues = (name, value) => {
+    return {
+        type: action.CHANGE_SORTED_VALUES,
+        payload: {
+            name,
+            value
+        }
+    }
+}
+
+export const setSortedProducts = (products) => {
+    return {
+        type: action.SET_SORTED_PRODUCTS,
+        payload: products
+    }
+}
+
 export const getTotals = () => ({ type: action.GET_TOTALS })
-
 export const resetCart = () => ({ type: action.RESET_CART })
-
 
 export const allActions = {
     addToCart,
@@ -42,5 +64,8 @@ export const allActions = {
     increaseAmount,
     decreaseAmount,
     getTotals,
-    resetCart
+    resetCart,
+    getSortedProducts,
+    changeSortedValues,
+    setSortedProducts
 }

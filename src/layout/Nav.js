@@ -18,7 +18,7 @@ const Nav = () => {
     return (
         <div className="nav">
             <div className="nav-logo">
-                <NavLink to='/'>Smartphone Shop</NavLink>
+                <NavLink to='/'>Smartphone e-commerce</NavLink>
             </div>
             <ul >
                 <li>
