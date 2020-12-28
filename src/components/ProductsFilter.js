@@ -20,6 +20,8 @@ const ProductsFilter = () => {
         price,
         free_shipping,
         os,
+        ram,
+        memory,
         case_included,
         by_price } = sortingValues
 
@@ -44,6 +46,18 @@ const ProductsFilter = () => {
         <option key={index} value={item}>{item}</option>
     ))
 
+    let ramItems = getUnique(products, 'ram')
+    ramItems = ['all', ...ramItems]
+    ramItems = ramItems.map((item, index) => (
+        <option key={index} value={item}>{item}</option>
+    ))
+
+    let memoryItems = getUnique(products, 'memory')
+    memoryItems = ['all', ...memoryItems]
+    memoryItems = memoryItems.map((item, index) => (
+        <option key={index} value={item}>{item}</option>
+    ))
+
     useEffect(() => {
 
         const {
@@ -52,6 +66,8 @@ const ProductsFilter = () => {
             case_included,
             free_shipping,
             os,
+            ram,
+            memory,
         } = sortingValues
 
         const fitlerProducts = () => {
@@ -77,6 +93,14 @@ const ProductsFilter = () => {
 
             if (os !== 'all') {
                 tempProducts = tempProducts.filter(item => item.os === os)
+            }
+
+            if (ram !== 'all') {
+                tempProducts = tempProducts.filter(item => item.ram === ram)
+            }
+
+            if (memory !== 'all') {
+                tempProducts = tempProducts.filter(item => item.memory === memory)
             }
 
             tempProducts = tempProducts.sort((a, b) => {
@@ -147,6 +171,28 @@ const ProductsFilter = () => {
                             onChange={handleChangeSortingValues}
                         >
                             {osItems}
+                        </select>
+                    </div>
+                    <div className="filter-form-el">
+                        <label htmlFor="ram">Ram (GB) </label>
+                        <select
+                            value={ram}
+                            name="ram"
+                            id="ram"
+                            onChange={handleChangeSortingValues}
+                        >
+                            {ramItems}
+                        </select>
+                    </div>
+                    <div className="filter-form-el">
+                        <label htmlFor="memory">Memory (GB)</label>
+                        <select
+                            value={memory}
+                            name="memory"
+                            id="memory"
+                            onChange={handleChangeSortingValues}
+                        >
+                            {memoryItems}
                         </select>
                     </div>
                     <div className="filter-form-el">

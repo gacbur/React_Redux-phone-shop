@@ -29,17 +29,19 @@ const ProductItem = ({ item }) => {
 
     }, [cart, item.name])
 
-
     return (
         <div className="product-item">
             <Link to={`/product/${item.id}`} >
                 <div className="product-item-image">
-                    <img src={item.img} alt="" />
+                    <img src={item.img[0]} alt={item.name} />
+                </div>
+
+                <div className="product-item-text">
+                    <h4>Product: {item.name}</h4>
+                    <h5>Price: ${item.price}</h5>
                 </div>
             </Link>
-            <div className="product-item-text">
-                <h4>Product: {item.name}</h4>
-                <h5>Price: ${item.price}</h5>
+            <div className="product-item-btn-cnt">
                 <button
                     disabled={IsItemInCart ? true : false}
                     onClick={() => dispatch(allActions.addToCart(item))}
