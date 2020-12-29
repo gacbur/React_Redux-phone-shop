@@ -13,7 +13,14 @@ const initialState = {
             case_included: true,
             free_shipping: true,
             os: 'android',
-            amount: 1
+            amount: 1,
+            opinions: [
+                {
+                    username: 'XD',
+                    rating: 4,
+                    opinion: 'Good products',
+                }
+            ]
         },
         {
             id: 2,
@@ -26,7 +33,14 @@ const initialState = {
             case_includede: true,
             free_shipping: false,
             os: 'android',
-            amount: 1
+            amount: 1,
+            opinions: [
+                {
+                    username: 'XD',
+                    rating: 4,
+                    opinion: 'Good products',
+                }
+            ]
         },
         {
             id: 3,
@@ -38,7 +52,14 @@ const initialState = {
             memory: "32GB",
             case_included: false,
             os: 'android',
-            amount: 1
+            amount: 1,
+            opinions: [
+                {
+                    username: 'XD',
+                    rating: 4,
+                    opinion: 'Good products',
+                }
+            ]
         },
         {
             id: 4,
@@ -51,7 +72,14 @@ const initialState = {
             case_included: true,
             free_shipping: false,
             os: 'android',
-            amount: 1
+            amount: 1,
+            opinions: [
+                {
+                    username: 'XD',
+                    rating: 4,
+                    opinion: 'Good products',
+                }
+            ]
         },
         {
             id: 5,
@@ -64,7 +92,14 @@ const initialState = {
             case_included: true,
             free_shipping: true,
             os: 'ios',
-            amount: 1
+            amount: 1,
+            opinions: [
+                {
+                    username: 'XD',
+                    rating: 4,
+                    opinion: 'Good products',
+                }
+            ]
         },
         {
             id: 6,
@@ -77,7 +112,14 @@ const initialState = {
             case_included: true,
             free_shipping: true,
             os: 'ios',
-            amount: 1
+            amount: 1,
+            opinions: [
+                {
+                    username: 'XD',
+                    rating: 4,
+                    opinion: 'Good products',
+                }
+            ]
         }
     ],
     sortedProducts: [],
@@ -172,6 +214,32 @@ export const cartReducer = (state = initialState, action) => {
                 ...state,
                 sortedProducts: action.payload
             }
+        case act.ADD_OPINION:
+
+            const review = {
+                username: action.payload.username,
+                rating: action.payload.rating,
+                opinion: action.payload.opinion
+            }
+
+            return {
+                ...state,
+                products: [
+                    ...state.products.map(item => {
+                        if (item.id === action.payload.id) {
+                            // item = { item, opinions: [...item.opinions, review] }
+                            return {
+                                ...item,
+                                opinions: [...item.opinions, review]
+                            }
+                        }
+                        else {
+                            return item
+                        }
+                    })
+                ]
+            }
+
         default:
             return state;
     }

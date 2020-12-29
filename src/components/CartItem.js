@@ -12,8 +12,6 @@ const CartItem = ({ item }) => {
 
     const dispatch = useDispatch()
 
-
-
     return (
         <div className="cart-item">
             <div className="cart-item-image">

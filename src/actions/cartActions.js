@@ -58,6 +58,19 @@ export const setSortedProducts = (products) => {
 export const getTotals = () => ({ type: action.GET_TOTALS })
 export const resetCart = () => ({ type: action.RESET_CART })
 
+export const addOpinion = (values, id) => {
+    const { username, rating, opinion } = values
+    return {
+        type: action.ADD_OPINION,
+        payload: {
+            username,
+            rating,
+            opinion,
+            id
+        }
+    }
+}
+
 export const allActions = {
     addToCart,
     removeFromCart,
@@ -67,5 +80,6 @@ export const allActions = {
     resetCart,
     getSortedProducts,
     changeSortedValues,
-    setSortedProducts
+    setSortedProducts,
+    addOpinion
 }

@@ -8,3 +8,5 @@ export const RESET_CART = 'resetCart'
 export const GET_SORTED_PRODUCTS = 'getSortedProducts'
 export const CHANGE_SORTED_VALUES = 'changeSortedValues'
 export const SET_SORTED_PRODUCTS = 'setSortedProducts'
+
+export const ADD_OPINION = 'addOpinion'
