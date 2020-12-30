@@ -31,6 +31,13 @@ export const decreaseAmount = (id, amount) => {
     }
 }
 
+export const getFeaturedProducts = (products) => {
+    return {
+        type: action.GET_FEATURED_PRODUCTS,
+        payload: products,
+    }
+}
+
 export const getSortedProducts = (products) => {
     return {
         type: action.GET_SORTED_PRODUCTS,
@@ -88,6 +95,7 @@ export const allActions = {
     decreaseAmount,
     getTotals,
     resetCart,
+    getFeaturedProducts,
     getSortedProducts,
     changeSortedValues,
     setSortedProducts,

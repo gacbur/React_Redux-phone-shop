@@ -22,7 +22,7 @@ const Nav = () => {
             </div>
             <ul >
                 <li>
-                    <NavLink to='/'>Products</NavLink>
+                    <NavLink to='/products'>Products</NavLink>
                 </li>
                 <li>
                     <NavLink to='/cart'>Cart <span className="cart-items-number"><FaShoppingCart />{ItemsInCartNb === 0 ? null : ItemsInCartNb}</span></NavLink>

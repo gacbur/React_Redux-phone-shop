@@ -88,6 +88,7 @@ const initialState = {
             opinions: []
         }
     ],
+    featuredProducts: [],
     sortedProducts: [],
     sortingValues: {
         name: '',
@@ -162,6 +163,8 @@ export const cartReducer = (state = initialState, action) => {
             return { ...state, total, amount }
         case act.RESET_CART:
             return { ...state, cart: [] }
+        case act.GET_FEATURED_PRODUCTS:
+            return { ...state, featuredProducts: action.payload }
         case act.GET_SORTED_PRODUCTS:
             return {
                 ...state,
