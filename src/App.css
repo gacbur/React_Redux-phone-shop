@@ -489,6 +489,10 @@
   background-color: var(--secondary-color-disabled);
 }
 
+.single-product-description a{
+  display:flex;
+}
+
 /* PRODUCT OPINION */
 
 .product-opinion{
@@ -583,5 +587,21 @@
 
 .opinion-item p:last-child{
   margin-top: 3em;
+}
+
+.opinion-delete-btn{
+  cursor: pointer;
+  background-color: rgb(219, 108, 108);
+  color:white;
+  border:none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding:.5em 1em;
+  margin-top:0em;
+  display:flex;
+  margin-left:auto;
+}
+
+.opinion-delete-btn:hover{
+  background-color: rgb(219, 128, 128);
 }
 

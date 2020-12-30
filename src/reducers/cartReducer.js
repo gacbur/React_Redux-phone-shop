@@ -1,5 +1,7 @@
 import * as act from '../actions/actionTypes'
 
+import uuid from 'react-uuid'
+
 const initialState = {
     products: [
         {
@@ -14,13 +16,7 @@ const initialState = {
             free_shipping: true,
             os: 'android',
             amount: 1,
-            opinions: [
-                {
-                    username: 'XD',
-                    rating: 4,
-                    opinion: 'Good products',
-                }
-            ]
+            opinions: []
         },
         {
             id: 2,
@@ -34,13 +30,7 @@ const initialState = {
             free_shipping: false,
             os: 'android',
             amount: 1,
-            opinions: [
-                {
-                    username: 'XD',
-                    rating: 4,
-                    opinion: 'Good products',
-                }
-            ]
+            opinions: []
         },
         {
             id: 3,
@@ -53,13 +43,7 @@ const initialState = {
             case_included: false,
             os: 'android',
             amount: 1,
-            opinions: [
-                {
-                    username: 'XD',
-                    rating: 4,
-                    opinion: 'Good products',
-                }
-            ]
+            opinions: []
         },
         {
             id: 4,
@@ -73,13 +57,7 @@ const initialState = {
             free_shipping: false,
             os: 'android',
             amount: 1,
-            opinions: [
-                {
-                    username: 'XD',
-                    rating: 4,
-                    opinion: 'Good products',
-                }
-            ]
+            opinions: []
         },
         {
             id: 5,
@@ -93,13 +71,7 @@ const initialState = {
             free_shipping: true,
             os: 'ios',
             amount: 1,
-            opinions: [
-                {
-                    username: 'XD',
-                    rating: 4,
-                    opinion: 'Good products',
-                }
-            ]
+            opinions: []
         },
         {
             id: 6,
@@ -113,13 +85,7 @@ const initialState = {
             free_shipping: true,
             os: 'ios',
             amount: 1,
-            opinions: [
-                {
-                    username: 'XD',
-                    rating: 4,
-                    opinion: 'Good products',
-                }
-            ]
+            opinions: []
         }
     ],
     sortedProducts: [],
@@ -215,19 +181,17 @@ export const cartReducer = (state = initialState, action) => {
                 sortedProducts: action.payload
             }
         case act.ADD_OPINION:
-
             const review = {
+                id: uuid(),
                 username: action.payload.username,
                 rating: action.payload.rating,
                 opinion: action.payload.opinion
             }
-
             return {
                 ...state,
                 products: [
                     ...state.products.map(item => {
                         if (item.id === action.payload.id) {
-                            // item = { item, opinions: [...item.opinions, review] }
                             return {
                                 ...item,
                                 opinions: [...item.opinions, review]
@@ -239,7 +203,29 @@ export const cartReducer = (state = initialState, action) => {
                     })
                 ]
             }
+        case act.DELETE_OPINION:
 
+            return {
+                ...state,
+                products: [
+                    ...state.products.map(item => {
+                        if (item.id === action.payload.productID) {
+
+                            let tempOpinions = item.opinions
+                            tempOpinions = tempOpinions.filter(item => item.id !== action.payload.opinionID)
+                            console.log(tempOpinions)
+
+                            return {
+                                ...item,
+                                opinions: tempOpinions
+                            }
+                        }
+                        else {
+                            return item
+                        }
+                    })
+                ]
+            }
         default:
             return state;
     }

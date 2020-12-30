@@ -71,6 +71,16 @@ export const addOpinion = (values, id) => {
     }
 }
 
+export const deleteOpinion = (opinionID, productID) => {
+    return {
+        type: action.DELETE_OPINION,
+        payload: {
+            opinionID,
+            productID
+        }
+    }
+}
+
 export const allActions = {
     addToCart,
     removeFromCart,
@@ -81,5 +91,6 @@ export const allActions = {
     getSortedProducts,
     changeSortedValues,
     setSortedProducts,
-    addOpinion
+    addOpinion,
+    deleteOpinion
 }

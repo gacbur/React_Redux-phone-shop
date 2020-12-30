@@ -10,3 +10,4 @@ export const CHANGE_SORTED_VALUES = 'changeSortedValues'
 export const SET_SORTED_PRODUCTS = 'setSortedProducts'
 
 export const ADD_OPINION = 'addOpinion'
+export const DELETE_OPINION = 'deleteOpinion'

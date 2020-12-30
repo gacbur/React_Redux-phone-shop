@@ -14,6 +14,9 @@ export const Validation = (values) => {
     if (rating === '') {
         errors.ratingError = 'Rating cannot be empty.'
     }
+    else if (rating > 5 || rating < 1) {
+        errors.ratingError = 'Rating must be in span of 1 to 5.'
+    }
 
     if (opinion === '') {
         errors.opinionError = 'Opinion cannot be empty.'

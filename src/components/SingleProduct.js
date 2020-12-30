@@ -69,6 +69,10 @@ const SingleProduct = (props) => {
         }
     }, [formCorrect])
 
+    const handleDeleteOpinion = (opinionID, productID) => {
+        dispatch(allActions.deleteOpinion(opinionID, productID))
+    }
+
     if (!product) {
         return (
             <div>
@@ -125,7 +129,7 @@ const SingleProduct = (props) => {
                                     className="single-product-next-img"><AiOutlineArrowLeft /></button>
                                 {img.map((item, index) => {
                                     return (
-                                        <div className="single-product-btn">
+                                        <div key={index} className="single-product-btn">
                                             <img onClick={() => handleSwitchImage('choose', index)} src={item} alt="btn"></img>
                                         </div>
                                     )
@@ -145,6 +149,7 @@ const SingleProduct = (props) => {
                             <p className="single-product-text-control"><strong>case included: </strong>{case_included ? 'Case is included' : 'Case is not included'}</p>
                             <p className="single-product-text-control"><strong>free shipping: </strong>{free_shipping ? 'We provide free shipping for this product!' : 'We do not provide free shipping for this product'}</p>
                             <p className="single-product-text-control"><strong>Price: </strong>${price}</p>
+                            <a href="#opinions">See reviews ({product.opinions.length})</a>
                             <button
                                 disabled={productIsInCart ? true : false}
                                 onClick={() => dispatch(allActions.addToCart(product))}
@@ -152,7 +157,7 @@ const SingleProduct = (props) => {
                             >{`${productIsInCart ? 'Item in cart' : 'Add to cart'}`}</button>
                         </div>
                     </div>
-                    <div className="product-opinion">
+                    <div id="opinions" className="product-opinion">
                         <div className="opinion-intro">
                             <h2>Add review</h2>
                         </div>
@@ -192,13 +197,15 @@ const SingleProduct = (props) => {
                             <button onClick={handleSubmitForm} className="opinion-add-btn">Submit</button>
                         </form>
                         <div className="opinions-cnt">
-                            <h3>Comments (0)</h3>
+                            <h3>Comments: ({product.opinions.length})</h3>
                             <p className="opinion-added-msg">{commentAddedMessage}</p>
-                            {product.opinions.map(item => (
-                                <div className="opinion-item">
+                            {product.opinions.map((item, index) =>
+                            (
+                                <div key={index} className="opinion-item">
                                     <p><strong>Username: </strong>{item.username}</p>
                                     <p><strong>Rating: </strong>{item.rating}</p>
                                     <p><strong>Review: </strong>{item.opinion}</p>
+                                    <button className="opinion-delete-btn" onClick={() => handleDeleteOpinion(item.id, product.id)}>Delete comment</button>
                                 </div>
                             ))}
                         </div>
