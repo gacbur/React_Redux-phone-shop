@@ -9,14 +9,28 @@
    --primary-color: #3a6073;
    --primary-color-hover: #52788b;
    --secondary-color: #16222a;
-   --secondary-color-hover: #243744   ;
-   --secondary-color-disabled: #45545e
-   ;
+   --secondary-color-hover: #243744;
+   --secondary-color-disabled: #45545e;
+
 }
 
 .App{
+  position: relative;
   min-height: 100vh;
   width:100%;
+}
+
+.App-wrapper{
+  padding-bottom: 10em;
+}
+
+.footer{
+  margin-top: 5em;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10em;
 }
 
 /* NAV */
@@ -93,7 +107,8 @@
 /* HOME CAROUSEL */
 
 .home-carousel{
-  margin-top: 2em;
+  margin-top: 3em;
+  margin-bottom: 9em;
   width:95%;
   max-width: 900px;
   text-align: center;
@@ -248,7 +263,8 @@
 
 .products-cnt{
   width:100%;
-  padding:2em 0em;
+  padding-top:2em;
+  padding-bottom: 7em;
   display: flex;
   justify-content: center;
 }
@@ -709,5 +725,68 @@
 
 .opinion-delete-btn:hover{
   background-color: rgb(219, 128, 128);
+}
+
+/* FOOTER */
+
+.footer{
+  height: 10em;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-cnt{
+  width:95%;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-left{
+  padding:1em;
+  border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:50%;
+  height: 100%;
+}
+
+.footer-left a{
+  transition: .2s;
+  color:white;
+  text-decoration: none;
+}
+
+.footer-left a:hover{
+  transition: .2s;
+  color:rgb(148, 148, 148);
+}
+
+.footer-right{
+  padding:1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width:50%;
+  height: 100%;
+}
+
+.footer-right a{
+  margin:.3em;
+  transition: .2s;
+  font-size: 25px;
+  color:white;
+}
+
+.footer-right a:hover{
+  transition: .2s;
+  color:rgb(148, 148, 148);
 }
 
