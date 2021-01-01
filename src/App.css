@@ -11,7 +11,6 @@
    --secondary-color: #16222a;
    --secondary-color-hover: #243744;
    --secondary-color-disabled: #45545e;
-
 }
 
 .App{
@@ -37,6 +36,7 @@
 
 .nav{
   background-color: var(--primary-color);
+  position:relative;
   display: flex;
   align-items: center;
 }
@@ -47,6 +47,7 @@
 }
 
 .nav-logo a{
+  display: block;
   padding:1.8em 1.5em;
   font-size: 17px;
   text-decoration: none;
@@ -71,10 +72,15 @@
   transition: .4s;
 }
 
-.nav li a:hover{
+.nav li .nav-links:hover{
   background-color: var(--primary-color-hover);
   transition: .4s;
 }
+
+.nav-hamburger{
+  display: none;
+}
+
 /* HOME TITLE */
 
 .home-title-cnt{
@@ -790,3 +796,74 @@
   color:rgb(148, 148, 148);
 }
 
+@media all and (max-width:768px){
+
+/* NAV  */
+
+  .nav{
+    flex-direction: column;
+  }
+
+  .nav-hamburger{
+    top:10px;
+    border:none;
+    background-color: var(--primary-color);
+    color:white;
+    right:10px;
+    display: flex;
+    justify-content: center;
+    padding:.4em .4em;
+    font-size: 35px;
+    position:absolute;
+  }
+
+  .nav-links{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+  }
+
+  .nav-links.show{
+    display: none;
+  }
+
+  .nav li{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav li a{
+    padding:1.8em 1.5em;
+    width:100%;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color:white;
+    transition: .4s;
+  }
+
+  .hamburger-icon.active{
+    transition:.3s;
+    transform: rotate(0deg)
+  }
+  
+  .hamburger-icon{
+    transition:.3s;
+    transform: rotate(-90deg)
+  }
+  
+  /* FILTER */
+  .filter-form{
+    width:90%;
+    max-width: 1100px;
+  }
+
+  /* PRODUCTS */
+
+  .product{
+    width:100%;
+  }
+
+
+}
