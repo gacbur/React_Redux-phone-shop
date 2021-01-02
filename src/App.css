@@ -865,5 +865,54 @@
     width:100%;
   }
 
+ /* SINGLE PAGE */
 
+ .single-product-cnt{
+  margin-top: 2em;
+  margin-bottom: 2em;
+ }
+
+ .single-product{
+  flex-direction: column;
+  width:95%;
+  padding:2em 1em;
+}
+
+.single-product-img-cnt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 280px;
+  padding:1em;
+  width:50%;
+  height: 100%;
+}
+
+.single-product-img img{
+  width: 100%;
+  min-height: 250px;
+  max-height: 250px;
+}
+
+.single-product-next-img{
+  width:4em;
+}
+
+.single-product-description{
+  width:95%;
+  max-width: 600px;
+}
+
+/* PRODUCT OPINION */
+
+.product-opinion{
+  background-color: white;
+  max-width: 900px;
+  width:95%;
+  margin-top:3em;
+  padding:2em .7em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+  
 }
