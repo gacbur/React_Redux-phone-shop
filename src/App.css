@@ -907,12 +907,71 @@
 /* PRODUCT OPINION */
 
 .product-opinion{
-  background-color: white;
-  max-width: 900px;
   width:95%;
-  margin-top:3em;
-  padding:2em .7em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-top:1em;
+  padding:2em 1em;
 }
-  
+
+.opinion-form{
+  margin:.5em;
+}
+
+/* CART */
+
+.cart-cnt{
+  padding:2em 0em;
+}
+
+.cart{
+  width:96%
+}
+
+.cart-item{
+  padding:.0em;
+  height: 90px;
+}
+
+.cart-item-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item-image img{
+ height: 60%;
+}
+
+.cart-item-text{
+  font-size: 15px;
+}
+
+.cart-item-text h4 {
+  font-size: 13px;
+}
+
+.cart-item-btn{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin-right:.1em;
+}
+
+.cart-item-btn-counter{
+  font-size: 22px;
+  padding:0em .3em;
+}
+
+.cart-total{
+  padding:2em 1em;
+  width:95%;
+}
+
+.cart-manage{
+  width:90%;
+}
+
+.cart-manage-btn{
+  padding:1.1em 1.5em;
+}
+
 }
