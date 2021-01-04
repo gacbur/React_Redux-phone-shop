@@ -21,7 +21,7 @@ const initialState = {
         {
             id: 2,
             name: 'Samsung Galaxy 9 3/64GB',
-            img: ['https://nupro.pl/userdata/public/gfx/627/3.jpg', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQKQM_7ZbrLidapAKR4CTcRLNmW9VOVufwwOlKYUk9xeX4QD-pKVL7nwDrnl9HcwpWnfWE1vAv5mAyAV52slbDhDyW4BY3S&usqp=CAY', 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTQ19D40dpV3yQ1JQkSsWsf_-4lzDeX-PIzrHv5U7fQz3y_93fKrBNpHs-0EgVwA6EJfdKyJ3G9khN_y5Mqtf7LZ_6GYrUDAg&usqp=CAY'],
+            img: ['https://red-mobile.pl/wp-content/uploads/2019/05/pr_2018_2_23_9_35_38_398_00.png?x17846', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQKQM_7ZbrLidapAKR4CTcRLNmW9VOVufwwOlKYUk9xeX4QD-pKVL7nwDrnl9HcwpWnfWE1vAv5mAyAV52slbDhDyW4BY3S&usqp=CAY', 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTQ19D40dpV3yQ1JQkSsWsf_-4lzDeX-PIzrHv5U7fQz3y_93fKrBNpHs-0EgVwA6EJfdKyJ3G9khN_y5Mqtf7LZ_6GYrUDAg&usqp=CAY'],
             description: 'The Samsung Galaxy S9 is a smartphone that was tested with the Android 8.0. 0 operating system. This model weighs 5.6 ounces, has a 5.8 inch touch screen display, 12-megapixel main camera, and 8-megapixel selfie camera. It comes with 4GB of RAM.',
             price: 450,
             ram: '3GB',

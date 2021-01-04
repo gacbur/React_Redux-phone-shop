@@ -7,8 +7,8 @@ export const Validation = (values) => {
     if (username === '') {
         errors.usernameError = 'Username cannot be empty.'
     }
-    else if (username.length < 4) {
-        errors.usernameError = 'Username cannot be smaller than 4 characters.'
+    else if (username.length < 2) {
+        errors.usernameError = 'Username cannot be smaller than 2 characters.'
     }
 
     if (rating === '') {

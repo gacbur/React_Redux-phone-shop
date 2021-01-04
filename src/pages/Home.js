@@ -38,8 +38,8 @@ const Home = () => {
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
-        { width: 400, itemsToShow: 2 },
-        { width: 700, itemsToShow: 3 },
+        { width: 500, itemsToShow: 2 },
+        { width: 800, itemsToShow: 3 },
     ]
 
     return (
